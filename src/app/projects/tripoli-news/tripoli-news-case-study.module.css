@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+.page {
+    background: #fff;
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+}
+
+.section {
+    padding: 6rem 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero {
+    padding: 6rem 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.heroContent {
+    max-width: 720px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #1f2330;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.lead,
+.overview {
+    font-size: 1.125rem;
+    /* 18px */
+    line-height: 1.7;
+    max-width: 720px;
+
+    color: #3a3f50;
+}
+
+.overview {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+}
+
+.section h2 {
+    font-family: "Xanh Mono", monospace;
+    margin-bottom: 1.5rem;
+}
+
+.section p {
+    max-width: 60ch;
+    margin-bottom: 1rem;
+}
+
+.section ul {
+    padding-left: 1.25rem;
+}
+
+.section li {
+    margin-bottom: 0.5rem;
+}
+
+.processGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+}
+
+.processCard {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 2rem;
+    border-radius: 16px;
+}
+
+.labels {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary) !important;
+}
+
+.tag {
+    text-align: center;
+    padding: 0.6rem 1.3rem;
+    font-weight: 300;
+    color: var(--text-color) !important;
+    font-size: 1rem;
+    font-family: "Xanh Mono", sans-serif;
+    background: var(--glass-bg);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 999px;
+    font-style: italic;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: transform 0.45s cubic-bezier(.16, 1.3, .53, 1.01), background 0.35s, color 0.35s, box-shadow 0.35s;
+    padding-bottom: 1rem;
+}
+
+.problemList {
+    max-width: 60ch;
+}
+
+.heroImages {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    width: 120%;
+}
+
+.heroImages img {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+
+.strategyList {
+    max-width: 60ch;
+}
+
+.strategyList li {
+    margin-bottom: 0.75rem;
+}
+
+.lead {
+    max-width: 65ch;
+    font-size: 1.05rem;
+}
+
+.comparison {
+    margin-top: 3rem;
+}
+
+.comparisonLabel {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 1rem;
+}
+
+.comparisonGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.comparisonGrid img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.brandingImage {
+    margin: 2.5rem 0;
+}
+
+.brandingImage img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.brandingGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.tagline {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.brandingShowcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin: 2.5rem 0;
+}
+
+.brandingShowcase img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.processList {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/* Each step row */
+.processRow {
+    max-width: 900px;
+}
+
+/* Text block */
+.processContent {
+    max-width: 60ch;
+}
+
+.step {
+    display: inline-block;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 0.75rem;
+}
+
+/* Image sits UNDER text */
+.processImageWrapper {
+    margin-top: 1.5rem;
+}
+
+.processImageWrapper img {
+    width: 80%;
+    border-radius: 12px;
+    display: block;
+}
+
+.resultsList {
+    margin: 1.5rem 0 3rem;
+    max-width: 60ch;
+}
+
+.resultsMediaGrid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* ===============================
+   CHALLENGE MEDIA – FINAL FIX
+================================ */
+
+.mediaSplit {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    align-items: start;
+}
+
+/* IMAGE */
+.mediaSplit img {
+    width: 100%;
+    border-radius: 16px;
+    background: #f4f6f8;
+}
+
+/* REELS */
+.reel {
+    width: 80%;
+    border-radius: 16px;
+}
+
+/* 16:9 layout images */
+.resultsImages {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.resultsImages img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* Outcomes list */
+.resultsList {
+    max-width: 60ch;
+    margin-top: 2rem;
+}
+
+.resultsList li {
+    margin-bottom: 0.75rem;
+}
+
+.labels {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.labels li {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.7rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+}
+
+.imageGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+    max-width: 900px;
+}
+
+.imageGrid img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.bulletList {
+    max-width: 60ch;
+    margin-top: 1.5rem;
+}
+
+.bulletList li {
+    margin-bottom: 0.75rem;
+}
+
+/* ===============================
+   REELS – RESULTS
+================================ */
+
+.reelsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 3rem 0;
+    align-items: start;
+}
+
+.reelResults {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    border-radius: 16px;
+    background: #000;
+}
+
+/* 16:9 layout images */
+.resultsImages {
+
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.resultsImages img {
+    width: 100%;
+
+    border-radius: 20px;
+}
+
+/* Outcomes list */
+.resultsList {
+    max-width: 60ch;
+    margin-top: 2rem;
+}
+
+.resultsList li {
+    margin-bottom: 0.75rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .reelsGrid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        justify-items: center;
+    }
+
+    .reelResults {
+        max-width: 260px;
+        /* 👈 smaller on phone */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 4rem 1.5rem;
+        text-align: left;
+    }
+
+    .heroImages,
+    .imageGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .reelsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .mediaSplit {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    /* Image on top */
+    .mediaSplit img {
+        grid-column: span 2;
+        max-height: 100%;
+    }
+
+    /* Reels bigger than image */
+    .reel {
+        width: 100%;
+        max-height: 100%;
+    }
+}

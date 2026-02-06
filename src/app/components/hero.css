@@ -1,0 +1,382 @@
+/* ====================== HERO ROOT ====================== */
+.hero-root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  perspective: 1200px;
+  /* for 3D depth */
+}
+
+/* ========== ANIMATED GRADIENT BACKGROUND ========== */
+.hero-root::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(120deg,
+      var(--page-bg-a),
+      var(--page-bg-b),
+      var(--page-bg-c));
+  background-size: 300% 300%;
+  filter: blur(6px);
+  animation: heroGradient 14s ease infinite;
+  opacity: 1;
+}
+
+@keyframes heroGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  33% {
+    background-position: 50% 50%;
+  }
+
+  66% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Subtle overlay glass blur */
+.hero-root::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+}
+
+/* ================= CENTER WRAPPER ================= */
+.hero-center-wrapper {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* ================= NAME BLOCK ================= */
+.name-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ================= TITLES ================= */
+.hero-title,
+.hero-surname {
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  line-height: 0.95;
+  color: var(--title-color);
+  margin: 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .8s ease, transform .8s ease;
+
+  white-space: nowrap;
+  /* prevents splitting */
+}
+
+/* Mobile-first (phones look strong) */
+.hero-title {
+  font-size: clamp(3.8rem, 10vw, 5.2rem);
+}
+
+.hero-surname {
+  font-size: clamp(4.2rem, 11vw, 5.8rem);
+}
+
+.hero-title.visible,
+.hero-surname.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= INTERACTIVE BACKGROUND ================= */
+.hero-bg {
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(circle at top left,
+      rgba(120, 120, 255, 0.15),
+      transparent 60%);
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+
+/* ================= SURNAME ROW ================= */
+.surname-row {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+/* Only stack vertically when truly needed */
+@media (max-width: 900px) {
+  .surname-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
+.surname-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ================= HANDWRITING TAGLINE ================= */
+.hero-tagline-container {
+  margin-top: 6px;
+  display: block;
+  pointer-events: none;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: opacity .6s ease, transform .6s ease;
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.hero-tagline-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tagline-text {
+  display: inline-block;
+  font-family: "Nothing You Could Do", "Dancing Script", cursive;
+  font-size: 28px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.95);
+  -webkit-text-stroke: 0.8px rgba(255, 255, 255, 0.25);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  white-space: pre-wrap;
+}
+
+/* ================= CHAR ANIMATION ================= */
+.tag-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(6px) rotate(-1deg) scale(0.98);
+  animation: charReveal 420ms forwards cubic-bezier(.18, .9, .32, 1);
+}
+
+@keyframes charReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+.tagline-text.written {
+  animation: taglineWiggle 1600ms ease-in-out infinite alternate;
+  transform-origin: left center;
+}
+
+@keyframes taglineWiggle {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-2px) rotate(0.4deg);
+  }
+}
+
+/* ================= PILLS ================= */
+.pills-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.tag-pill {
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  background: var(--glass-bg);
+  border: 1.5px solid var(--glass-border);
+  font-family: "Xanh Mono", sans-serif;
+  backdrop-filter: blur(16px);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-color);
+  cursor: pointer;
+  width: fit-content;
+  white-space: nowrap;
+  transition:
+    transform 0.45s cubic-bezier(.16, 1.3, .53, 1.01),
+    background 0.35s,
+    color 0.35s,
+    box-shadow 0.35s;
+}
+
+.tag-pill:hover {
+  transform: scale(1.32) rotate(var(--rotate, -4deg)) !important;
+  background: var(--pill-hover-bg) !important;
+  color: var(--pill-hover-color) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.28);
+}
+
+.pills-block .tag-pill:nth-child(2) {
+  --rotate: 4deg;
+}
+
+.pills-block .tag-pill:nth-child(3) {
+  --rotate: -5deg;
+}
+
+.tagline-text {
+  font-size: clamp(1.4rem, 3.5vw, 1.75rem);
+}
+
+/* ================= DOME MASK ================= */
+.hero-dome-mask {
+  transform: translateX(-50%) scale(0.25);
+  opacity: 0;
+  transition:
+    transform 1.3s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 1s ease;
+  pointer-events: none;
+}
+
+.hero-dome-mask.active {
+  transform: translateX(-50%) scale(4.5);
+  opacity: 1;
+}
+
+.hero-title {
+  font-size: clamp(3.2rem, 8vw, 7.5rem);
+}
+
+.hero-surname {
+  font-size: clamp(3.6rem, 9vw, 8.5rem);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .surname-group {
+    align-items: center;
+  }
+
+  .hero-surname {
+    line-height: 0.95;
+  }
+}
+
+@media (max-width:900px) {
+  .surname-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .pills-block {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .shapes-3d {
+    display: none;
+  }
+
+  .name-block,
+  .hero-title,
+  .hero-surname {
+    text-align: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-title {
+    line-height: 0.95;
+  }
+
+  .hero-surname {
+    line-height: 0.9;
+  }
+
+  .surname-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .name-block,
+  .hero-title,
+  .hero-surname {
+    text-align: center;
+    align-items: center;
+  }
+}
+
+/* Prevent horizontal scroll */
+html,
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 4.6rem;
+    line-height: 0.95;
+  }
+
+  .hero-surname {
+    font-size: 5.2rem;
+    line-height: 0.9;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 4.2rem;
+  }
+
+  .hero-surname {
+    font-size: 4.8rem;
+  }
+}
+
+/* Tablets */
+@media (min-width: 600px) {
+  .hero-title {
+    font-size: clamp(4.5rem, 8vw, 6.2rem);
+  }
+
+  .hero-surname {
+    font-size: clamp(5rem, 9vw, 7rem);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: clamp(7.8rem, 6vw, 7.5rem);
+  }
+
+  .hero-surname {
+    font-size: clamp(7.1 rem, 6.8vw, 8.5rem);
+  }
+}

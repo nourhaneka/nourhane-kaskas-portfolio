@@ -1,0 +1,261 @@
+/* =============== LOAD FALLBACK HANDWRITING FONT (DANCING SCRIPT) ===============
+   The font "Nothing You Could Do" is expected; if it's not installed,
+   Dancing Script will be used.
+========================================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+/* =============== FIX ALL LINK STYLING =============== */
+a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* ======= ROOT COLOR VARIABLES ======= */
+:root {
+  --page-bg-a: #8b87f6;
+  --page-bg-b: #ca83fd;
+  --page-bg-c: #f7fe73;
+  --title-color: #4b5160;
+
+  --primary: #7B61FF;
+  --primary-contrast: #fff;
+
+  --glass-bg: rgba(255, 255, 255, 0.20);
+  --glass-border: rgba(255, 255, 255, 0.45);
+
+  --pill-hover-bg: #7B61FF;
+  --pill-hover-color: #ffffff;
+
+  --text-color: #2b3140;
+
+  --menu-text: #e6e8f0;
+  --menu-accent: #7B61FF;
+
+}
+
+/* ======= NAVBAR (UNCHANGED STYLE) ======= */
+.navbar {
+  position: absolute;
+  top: 28px;
+  right: 40px;
+
+  display: flex;
+  gap: 18px;
+  align-items: center;
+
+  font-weight: 700;
+  color: var(--text-color);
+  z-index: 20;
+}
+
+.navbar--hidden {
+  transform: translateY(-150%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.navbar a {
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+.navbar a:hover {
+  color: var(--primary) !important;
+}
+
+.burger-button {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 1100;
+
+}
+
+.burger-line {
+  width: 24px;
+  height: 2.5px;
+  background-color: var(--text-color);
+  border-radius: 999px;
+  transform-origin: center;
+}
+
+/* Hover effect: lines turn primary */
+.burger-button:hover .burger-line {
+  background-color: var(--primary);
+}
+
+/* When menu is open, force burger lines to primary color */
+.burger-button.open .burger-line {
+  background-color: var(--primary);
+}
+
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.menu-item {
+  margin: 16px 0;
+}
+
+.menu-item a {
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--menu-text);
+}
+
+.menu-item a:hover {
+  color: #fff;
+}
+
+
+/* Default: hide mobile menu */
+.mobile-menu-wrapper {
+  display: none;
+}
+
+/* Mobile / Tablet (<=1024px) */
+@media (max-width: 1024px) {
+  .desktop-navbar {
+    display: none !important;
+    /* hide desktop links */
+  }
+
+  .mobile-menu-wrapper {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+  }
+}
+
+@media (max-width: 768px) {
+  .burger-button {
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .burger-button {
+    top: 1.5rem;
+    right: 2rem;
+  }
+}
+
+
+.nav-contact {
+  padding: 8px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(32, 32, 32, 0.12);
+}
+
+/* ======= RESET & BASE ======= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  color: var(--text-color);
+  background: transparent;
+}
+
+
+/* ================= FULL RESPONSIVE FIX — PHONE + TABLET ================= */
+@media (max-width: 1024px) {
+  .hero-center-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .name-block {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .surname-row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .surname-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: clamp(48px, 14vw, 72px);
+    line-height: 1;
+    text-align: center;
+  }
+
+  .hero-surname {
+    font-size: clamp(40px, 12vw, 64px);
+    line-height: 1;
+    text-align: center;
+  }
+
+  .hero-tagline-container {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .pills-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    max-width: 350px;
+    margin-top: 6px;
+  }
+}

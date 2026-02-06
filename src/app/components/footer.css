@@ -1,0 +1,81 @@
+.footer {
+    margin-top: 6rem;
+    padding: 2.5rem 1.5rem;
+
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+/* TEXT */
+.footer-text {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.footer-text span {
+    opacity: 0.6;
+}
+
+/* ICONS */
+.footer-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+    color: var(--text-color);
+    font-size: 1rem;
+    text-decoration: none;
+
+    transition: box-shadow 0.25s ease;
+}
+
+.footer-icon:hover {
+    box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}
