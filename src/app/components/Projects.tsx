@@ -159,7 +159,7 @@ export default function Projects() {
         })}
       </motion.ul>
 
-      <div className="projects-more">
+      {/*<div className="projects-more">
         <motion.a
           href="/portfolio"
           className="glass-button glass-button--small"
@@ -189,7 +189,7 @@ export default function Projects() {
             View All Projects
           </motion.span>
         </motion.a>
-      </div>
+      </div>*/}
 
       {/* Cursor-follow preview */}
       <motion.div

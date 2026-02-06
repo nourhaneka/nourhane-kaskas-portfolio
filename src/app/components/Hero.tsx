@@ -63,7 +63,7 @@ const Hero = forwardRef<HTMLDivElement>((_, ref) => {
       animate="show"
       variants={{ show: { transition: { staggerChildren: 0.12 } } }}
     >
-      <Navbar />
+      {/*  <Navbar /> */}
       {/* INTERACTIVE BACKGROUND */}
       <motion.div
         className="hero-bg"
