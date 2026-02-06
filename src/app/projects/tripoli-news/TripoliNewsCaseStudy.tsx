@@ -1,12 +1,10 @@
 "use client";
 
 import Hero from "./sections/Hero";
-import Challenge from "./sections/Challenge";
 import Role from "./sections/Role";
 import Process from "./sections/Process";
-import Identity from "./sections/Identity";
-import PrintingPackaging from "./sections/PrintingPackaging";
 import Strategy from "./sections/Strategy";
+import EditorialSystem from "./sections/EditorialSystem";
 import Results from "./sections/Results";
 import styles from "./tripoli-news-case-study.module.css";
 
@@ -15,106 +13,85 @@ export default function TripoliNewsCaseStudy() {
         <main className={styles.page}>
             <Hero
                 data={{
-                    title: "Tripolium Center",
-                    labels: ["Heritage Branding", "Photography ", "Social Media Visuals", "Content Strategy", "Print & Packaging"],
-                    summary: "Developing a brand identity rooted in the Latin name of Tripoli (Tripolium), blending educational modernism with the rich Mamluk and Ottoman architectural heritage of the city.",
-                    overview: "The Tripolium Center is more than an educational hub; it’s a tribute to the city it calls home. My work focused on creating a visual language that speaks the language of Tripoli—incorporating its iconic mosque silhouettes into seasonal campaigns and building a bridge between traditional Arabic culture and modern education.",
-                    image1: "/images/tripolium/hero-main1.png",
+                    title: "Tripoli News Network (TNN)",
+                    labels: [
+                        "Editorial Design",
+                        "Journalistic Branding",
+                        "Social Media Strategy",
+                        "Information Hierarchy"
+                    ],
+                    summary:
+                        "Bridging the gap between traditional journalism and digital-first consumption through bespoke editorial branding.",
+                    overview:
+                        "Working with Tripoli's primary news outlet, I transformed daily headlines into high-impact social media assets. My goal was to move away from generic news templates and create a system where the subject of the article and the voice of the journalist work in visual harmony.",
+                    image1: "/images/tnn/hero-editorial-spread.png",
+                    image2: "/images/tnn/hero-social-presence.png",
                 }}
             />
 
             <Role
                 data={{
-                    summary:
-                        "I served as the Lead Creative, managing everything from the digital screen to the physical print shop floor.",
+                    title: "Editorial Art Director",
+                    summary: "In a fast-paced news environment, I served as the bridge between raw reporting and visual storytelling. I was responsible for ensuring that every piece of news—whether political, social, or cultural—carried the weight and authority of the TNN brand.",
                     responsibilities: [
-                        "Bespoke Ramadan & Eid Packaging Design",
-                        "On-site Photography & Videography of students",
-                        "Print Production Management (Stickers & Flex Banners)",
-                        "Social Media Story Frameworks",
-                        "Environmental Graphic Design",
+                        "Bespoke Article Poster Design: Creating unique visual hooks for high-priority editorial pieces.",
+                        "Journalist Spotlights: Designing layouts that highlight the writer, building authority and trust for each story.",
+                        "Brand Stewardship: Maintaining strict adherence to TNN's visual identity while modernizing its digital presence.",
+                        "Rapid Response Workflow: Delivering high-quality design assets at the speed of a 24-hour news cycle.",
+                        "Visual Hierarchy Management: Organizing headlines, sub-headers, and credits for instant legibility on mobile devices."
                     ],
-                }}
-            />
-            <Identity
-                data={{
-                    title: "The Tripolium Identity",
-                    description: "The name 'Tripolium' itself pays homage to the city's history. I focused on a brand system that feels authentic to Tripoli’s residents. During Ramadan and Eid, the posters didn't just use generic icons; they featured the specific silhouettes of Tripoli’s historic mosques, creating an immediate emotional bond with the local community.",
-                    elements: [
-                        "Architectural Integration: Using local mosque silhouettes in the Ramadan calendar and posters.",
-                        "Bilingual Sophistication: A typography system that respects Arabic calligraphic roots while remaining clean and readable.",
-                        "Cultural Resonance: A color palette inspired by the stone and spirit of the 'Old City'."
-                    ],
-                    image1: "/images/tripolium/Ramadan tripolium Brand stickers.png",
-                    image2: "/images/tripolium/tripolium Brand Visual Identity.png",
-                    image3: "/images/tripolium/logo diffrent design.png",
-                    image4: "/images/tripolium/tripolium Grade Rate Brand stickers.png",
-                }}
-            />
-            <Challenge
-                data={{
-                    label: "The Cross-Generational Bridge",
-                    description: "Educational design often falls into the trap of being 'too childish' (which loses parent trust) or 'too corporate' (which bores students). The mission was to find the middle ground.",
-                    problems: [
-                        "Dual-Targeting: Communicating professionalism to adults while maintaining visual appeal for children.",
-                        "Media Variety: Maintaining brand consistency across digital story templates, physical stickers, and 3-meter flex banners.",
-                        "The Print Gap: Ensuring vibrant digital designs translated accurately into high-quality physical print production.",
-                    ],
-                    // Highlighting the shift from generic to professional
-                    image: "/images/tripolium/initial-concept.png",
-                    video: "/images/tripolium/final-identity.mp4",
-                    video2: "/images/tripolium/final-identity2.mp4",
-
+                    image1: "/images/tnn/behind-the-design.png",
+                    image2: "/images/tnn/journalist-highlight-template.png",
                 }}
             />
 
-            <PrintingPackaging
+            <EditorialSystem
                 data={{
-                    title: "Tactile Branding: From Screen to Street",
-                    description: "Education is a physical experience. I designed and managed the production of everything from small-scale stickers for student rewards to 3-meter flex banners for the center's facade. The highlight was the seasonal packaging—creating Eid gift boxes and Ramadan calendars that students were proud to take home.",
-                    details: [
-                        "Seasonal Packaging: Custom-designed boxes and bags for Eid and Ramadan gifts.",
-                        "Environmental Graphics: Large-scale flex banners designed for high visibility without looking cluttered.",
-                        "Print Precision: Managing die-cut sticker production and color-accurate printing for a premium feel."
+                    title: "The Human Side of News",
+                    description: "News is more credible when you know who is writing it. I developed a system that treats the journalist as a key brand asset. By integrating portraits and writer credits into the posters, we shifted the perception of TNN from a 'faceless news site' to a community of trusted experts.",
+                    focusPoints: [
+                        "Writer Integration: Using consistent layout logic to feature the journalist without distracting from the headline.",
+                        "Subject-Specific Aesthetics: Tailoring the visual tone (colors/textures) to match the article’s category—from hard news to community features.",
+                        "The 'Verified' Look: Using clean, bold typography that mimics the weight of a classic newspaper front page."
                     ],
-                    image1: "/images/tripolium/flex.png",
-                    image2: "/images/tripolium/gift-Custum-photo.png",
-                    video1: "/images/tripolium/Eid-Gift-transation.mp4",
-                    video2: "/images/tripolium/gift-Eid.mp4",
-
+                    image1: "/images/tnn/politics-vs-culture-style.png",
+                    image2: "/images/tnn/editorial-poster-gallery.png",
                 }}
             />
 
             <Strategy
                 data={{
-                    title: "Strategy: Building Confidence & Connection",
-                    description: "The challenge was attracting parents while exciting students. My strategy focused on 'The Bond.' Through student photography and videography, we showed the human side of the center. By showcasing real progress and authentic Tripoli culture, we built a level of trust that generic stock-photo designs never could.",
+                    title: "Strategy: Clarity Over Clutter",
+                    description: "In the noisy environment of a social media feed, news needs to 'stop the scroll.' My strategy focused on high-contrast layouts and a 'No-Fluff' design approach. By prioritizing the headline and a single, powerful image, we ensured the core message was delivered in under 2 seconds.",
                     points: [
-                        "Social Proof: High-quality photography of real students to build parent confidence.",
-                        "Seasonal Storytelling: Using the Ramadan calendar as a daily touchpoint for the brand.",
-                        "Community Engagement: Creating content that celebrates Tripoli's local identity to foster loyalty."
+                        "Stop-the-Scroll Typography: Scaling headlines for maximum impact on small screens.",
+                        "Brand Consistency: Ensuring that regardless of the subject, the TNN identity remains the dominant visual force.",
+                        "Platform Optimization: Designing specific aspect ratios for Facebook (where TNN has a massive following) and Instagram Stories."
                     ],
+                    image1: "/images/tnn/analytics-impact.png",
+                    image2: "/images/tnn/mobile-feed-preview.png",
                 }}
             />
+
             <Process
                 data={[
                     {
                         step: "01",
-                        title: "Asset Diversification",
-                        description: "Creating a library of story templates and posters that allow for quick event announcements without losing brand quality.",
-                        image: "/images/tripolium/story-template.png",
+                        title: "Content Synthesis",
+                        description: "Distilling long-form articles into a single, powerful visual hook and a compelling headline.",
+                        image: "/images/tnn/process-synthesis.png",
                     },
                     {
                         step: "02",
-                        title: "The Human Element",
-                        description: "Capturing live sessions through photography to showcase the center's true environment and student engagement.",
-                        image: "/images/tripolium/process-photo.png",
+                        title: "Bespoke Illustration/Curation",
+                        description: "Selecting or editing imagery that reflects the gravity or the mood of the specific news subject.",
+                        image: "/images/tnn/process-curation.png",
                     },
                     {
                         step: "03",
-                        title: "Scale & Production",
-                        description: "Adapting digital identities for large-scale flex printing and intricate sticker die-cuts for Ramadan packaging.",
-                        image: "/images/tripolium/flex.png",
+                        title: "Editorial Polish",
+                        description: "Applying the final TNN branding layers and journalist credits for a verified, news-ready finish.",
+                        image: "/images/tnn/process-final.png",
                     },
                 ]}
             />
@@ -122,16 +99,11 @@ export default function TripoliNewsCaseStudy() {
             <Results
                 data={{
                     summary:
-                        "The result was a unified brand presence that elevated Tripolium Center’s perception in the local educational market.",
-                    reels: [
-                        "/images/tripolium/tripolium-reel-1.mp4",
-                        "/images/tripolium/tripolium-reel-2.mp4",
-                        "/images/tripolium/tripolium-reel-3.mp4",
-                    ],
+                        "The redesign of the article posters led to a more cohesive and authoritative digital presence for Tripoli News.",
                     outcomes: [
-                        "Increased parent engagement through professional, clear communication.",
-                        "Successful rollout of physical seasonal branding (Ramadan/Eid) that enhanced student delight.",
-                        "High-quality environmental graphics (Flex banners) that improved the center's physical presence.",
+                        "Higher engagement on editorial pieces featuring journalist spotlights.",
+                        "Increased 'shares' as users found the posters more professional and 'news-worthy.'",
+                        "A streamlined design workflow that allowed the newsroom to post high-quality content faster.",
                     ],
                 }}
             />

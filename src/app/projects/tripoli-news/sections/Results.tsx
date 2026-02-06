@@ -7,51 +7,31 @@ interface ResultsProps {
     data: {
         summary: string;
         outcomes: string[];
-        reels?: string[];     // 9:16 videos
-        images?: string[];    // 16:9 images
     };
 }
 
 export default function Results({ data }: ResultsProps) {
     return (
         <motion.section
-            className={styles.section}
-            initial={{ opacity: 0, y: 24 }}
+            className={`${styles.section} ${styles.results}`}
+            initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
         >
             <h2>Results</h2>
             <p className={styles.lead}>{data.summary}</p>
 
-            {/* Reel Videos */}
-            {data.reels && (
-                <div className={styles.reelsGrid}>
-                    {data.reels.map((src, i) => (
-                        <video
-                            key={i}
-                            src={src}
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className={styles.reelResults}
-                        />
-                    ))}
-                </div>
-            )}
-
-            {/* 16:9 Images */}
-            {data.images && (
-                <div className={styles.resultsImages}>
-                    {data.images.map((src, i) => (
-                        <img key={i} src={src} alt={`Result layout ${i + 1}`} />
-                    ))}
-                </div>
-            )}
-
-            <ul className={styles.resultsList}>
+            <ul className={styles.list}>
                 {data.outcomes.map((item, i) => (
-                    <li key={i}>{item}</li>
+                    <motion.li
+                        key={i}
+                        initial={{ opacity: 0, x: -16 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: i * 0.12 }}
+                    >
+                        {item}
+                    </motion.li>
                 ))}
             </ul>
         </motion.section>
