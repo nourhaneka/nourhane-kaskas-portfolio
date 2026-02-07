@@ -25,8 +25,7 @@ export default function CtragiftsCaseStudy() {
                         "Elevating an artisanal Islamic gift brand through sensory storytelling and seasonal content campaigns.",
                     overview:
                         "At Ctra Gifts, my mission was to weave together diverse product lines—from modest fashion to traditional Lebanese 'Moone'—into a single, cohesive brand narrative. I acted as the lead content creator, capturing the textures, traditions, and spirit of the brand for a growing digital audience.",
-                    image1: "/images/ctra/hero-lifestyle.png",
-                    image2: "/images/ctra/hero-products.png",
+                    image1: "/images/ctra/hero-lifestyle.jpg",
                 }}
             />
             <Role
@@ -54,8 +53,8 @@ export default function CtragiftsCaseStudy() {
                         "Warm, calm typography mood",
                         "Spiritual calm aesthetic"
                     ],
-                    image1: "/images/ctra/brand-board.png",
-                    image2: "/images/ctra/palette.png"
+                    image1: "/images/ctra/brand-1.jpg",
+                    image2: "/images/ctra/brand-2.jpg"
                 }}
             />
 
@@ -69,7 +68,7 @@ export default function CtragiftsCaseStudy() {
                         "Visual Harmony: Balancing diverse products (clothing vs. food) through a consistent color grade and 'homey' styling."
                     ],
                     image1: "/images/ctra/video-still-clothing.png",
-                    image2: "/images/ctra/moone-product-shot.png",
+                    image2: "/images/ctra/moone-product-shot.jpg",
                 }}
             />
 
@@ -82,8 +81,8 @@ export default function CtragiftsCaseStudy() {
                         "Occasional Posters: Designed bespoke graphics for Eid and Ramadan announcements that maintained the brand's 'Modest' elegance.",
                         "Community Engagement: Creating content that felt like a gift to the follower, not just an advertisement."
                     ],
-                    image1: "/images/ctra/ramadan-series-cover.png",
-                    image2: "/images/ctra/eid-poster-design.png",
+                    image1: "/images/ctra/ramadan.jpg",
+                    image2: "/images/ctra/eid-poster-design.jpg",
                 }}
             />
 
@@ -96,8 +95,8 @@ export default function CtragiftsCaseStudy() {
                         "Visual Consistency: Ensuring that posters and videos shared the same typographic soul and color palette.",
                         "Multi-Format Delivery: Designing specifically for Reels, Stories, and high-impact Feed posters."
                     ],
-                    image1: "/images/ctra/instagram-grid-view.png",
-                    image2: "/images/ctra/story-templates.png",
+                    image1: "/images/ctra/instagram-poster.jpg",
+                    image2: "/images/ctra/instagram-poster-2.jpg",
                 }}
             />
             <Results
@@ -110,9 +109,9 @@ export default function CtragiftsCaseStudy() {
                         "Community trust built through cultural and seasonal storytelling"
                     ],
                     reels: [
-                        "/videos/ctra/reel1.mp4",
-                        "/videos/ctra/reel2.mp4",
-                        "/videos/ctra/reel3.mp4"
+                        "/images/ctra/video-1.mp4",
+                        "/images/ctra/video-2.mp4",
+                        "/images/ctra/video-3.mp4"
                     ],
                     images: [
                         "/images/ctra/feed-1.png",
