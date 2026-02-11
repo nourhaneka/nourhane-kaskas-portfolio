@@ -12,6 +12,7 @@ interface StrategyProps {
         points: string[];
         image1: string;
         image2: string;
+        image3: string;
     };
 }
 
@@ -39,6 +40,7 @@ export default function Strategy({ data }: StrategyProps) {
             <div className={styles.mediaSplit}>
                 <motion.img src={data.image1} alt="Grid" />
                 <motion.img src={data.image2} alt="Templates" />
+                <motion.img src={data.image3} alt="Templates" />
             </div>
         </motion.section>
     );

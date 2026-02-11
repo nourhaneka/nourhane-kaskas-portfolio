@@ -36,7 +36,7 @@ export default function SeasonalCampaign({ data }: SeasonalCampaignProps) {
             </ul>
 
 
-            <div className={styles.mediaSplit}>
+            <div className={styles.seasonalMedia}>
                 <motion.img src={data.image} alt="Ramadan series" whileHover={{ scale: 1.04 }} />
                 <motion.video
                     src={data.video}

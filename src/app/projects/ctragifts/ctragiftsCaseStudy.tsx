@@ -55,10 +55,10 @@ export default function CtragiftsCaseStudy() {
                     ],
                     image1: "/images/ctra/brand-1.jpg",
                     image2: "/images/ctra/brand-2.jpg",
-
-                    reels: [
-                        "/images/ctra/video-3.mp4",
-                    ],
+                    image3: "/images/ctra/brand-3.jpg",
+                    image4: "/images/ctra/brand-4.jpg",
+                    image5: "/images/ctra/brand-5.jpg",
+                    image6: "/images/ctra/brand-6.jpg",
                 }}
             />
 
@@ -87,7 +87,7 @@ export default function CtragiftsCaseStudy() {
                         "Community Engagement: Creating content that felt like a gift to the follower, not just an advertisement."
                     ],
                     video: "/images/ctra/video-2.mp4",
-                    image: "/images/ctra/eid-poster-design.jpg",
+                    image: "/images/ctra/Ramadan-collection.png",
                 }}
             />
 
@@ -102,6 +102,7 @@ export default function CtragiftsCaseStudy() {
                     ],
                     image1: "/images/ctra/instagram-poster.jpg",
                     image2: "/images/ctra/instagram-poster-2.jpg",
+                    image3: "/images/ctra/eid-poster-design.jpg",
                 }}
             />
             <Results
@@ -119,12 +120,12 @@ export default function CtragiftsCaseStudy() {
                         "/images/ctra/video-6.mp4",
                         "/images/ctra/video-4.mp4",
                         "/images/ctra/video-5.mp4",
+                        "/images/ctra/video-8.mp4"
                     ],
                     images: [
                         "/images/ctra/feed-1.png",
                         "/images/ctra/feed-2.png",
                         "/images/ctra/feed-5.png",
-                        "/images/ctra/feed-6.png"
                     ]
                 }}
             />
