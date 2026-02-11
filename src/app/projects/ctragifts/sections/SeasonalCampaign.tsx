@@ -10,8 +10,8 @@ interface SeasonalCampaignProps {
         title: string;
         description: string;
         details: string[];
-        image1: string;
-        image2: string;
+        image: string;
+        video: string;
     };
 }
 
@@ -37,8 +37,15 @@ export default function SeasonalCampaign({ data }: SeasonalCampaignProps) {
 
 
             <div className={styles.mediaSplit}>
-                <motion.img src={data.image1} alt="Ramadan series" whileHover={{ scale: 1.04 }} />
-                <motion.img src={data.image2} alt="Eid poster" whileHover={{ scale: 1.04 }} />
+                <motion.img src={data.image} alt="Ramadan series" whileHover={{ scale: 1.04 }} />
+                <motion.video
+                    src={data.video}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    whileHover={{ scale: 1.03 }}
+                />
             </div>
         </motion.section>
     );

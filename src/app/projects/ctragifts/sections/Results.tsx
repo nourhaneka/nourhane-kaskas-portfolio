@@ -35,19 +35,23 @@ export default function Results({ data }: ResultsProps) {
             </ul>
 
 
-            <div className={styles.mediaSplit}>
+            {/* REELS GROUP */}
+            <div className={styles.reelsGroup}>
                 {data.reels.map((r, i) => (
                     <motion.video
                         key={i}
                         src={r}
+                        className={styles.reel}
                         autoPlay
                         muted
                         loop
                         playsInline
-                        whileHover={{ scale: 1.03 }}
+                        whileHover={{ scale: 1.04 }}
+                        transition={{ type: "spring", stiffness: 200, damping: 18 }}
                     />
                 ))}
             </div>
+
 
 
             <div className={styles.mediaSplit}>

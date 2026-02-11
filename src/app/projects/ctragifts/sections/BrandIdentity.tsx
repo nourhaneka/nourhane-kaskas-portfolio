@@ -12,6 +12,7 @@ interface BrandIdentityProps {
         points: string[];
         image1: string;
         image2: string;
+        reels: string[];
     };
 }
 
@@ -51,6 +52,19 @@ export default function BrandIdentity({ data }: BrandIdentityProps) {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
                 />
+            </div>
+            <div className={styles.mediaSplit}>
+                {data.reels.map((r, i) => (
+                    <motion.video
+                        key={i}
+                        src={r}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        whileHover={{ scale: 1.03 }}
+                    />
+                ))}
             </div>
         </motion.section>
     );

@@ -54,7 +54,11 @@ export default function CtragiftsCaseStudy() {
                         "Spiritual calm aesthetic"
                     ],
                     image1: "/images/ctra/brand-1.jpg",
-                    image2: "/images/ctra/brand-2.jpg"
+                    image2: "/images/ctra/brand-2.jpg",
+
+                    reels: [
+                        "/images/ctra/video-3.mp4",
+                    ],
                 }}
             />
 
@@ -67,8 +71,9 @@ export default function CtragiftsCaseStudy() {
                         "Organic Textures: Using natural lighting to emphasize the 'Hand-made' quality of the soaps and Moone items.",
                         "Visual Harmony: Balancing diverse products (clothing vs. food) through a consistent color grade and 'homey' styling."
                     ],
-                    image1: "/images/ctra/video-still-clothing.png",
+                    image1: "/images/ctra/moone-product-shot-2.jpg",
                     image2: "/images/ctra/moone-product-shot.jpg",
+
                 }}
             />
 
@@ -81,8 +86,8 @@ export default function CtragiftsCaseStudy() {
                         "Occasional Posters: Designed bespoke graphics for Eid and Ramadan announcements that maintained the brand's 'Modest' elegance.",
                         "Community Engagement: Creating content that felt like a gift to the follower, not just an advertisement."
                     ],
-                    image1: "/images/ctra/ramadan.jpg",
-                    image2: "/images/ctra/eid-poster-design.jpg",
+                    video: "/images/ctra/video-2.mp4",
+                    image: "/images/ctra/eid-poster-design.jpg",
                 }}
             />
 
@@ -110,12 +115,16 @@ export default function CtragiftsCaseStudy() {
                     ],
                     reels: [
                         "/images/ctra/video-1.mp4",
-                        "/images/ctra/video-2.mp4",
-                        "/images/ctra/video-3.mp4"
+                        "/images/ctra/video-7.mp4",
+                        "/images/ctra/video-6.mp4",
+                        "/images/ctra/video-4.mp4",
+                        "/images/ctra/video-5.mp4",
                     ],
                     images: [
                         "/images/ctra/feed-1.png",
-                        "/images/ctra/feed-2.png"
+                        "/images/ctra/feed-2.png",
+                        "/images/ctra/feed-5.png",
+                        "/images/ctra/feed-6.png"
                     ]
                 }}
             />
