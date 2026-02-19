@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 import styles from "../tripoli-news-case-study.module.css";
 
@@ -8,8 +9,8 @@ interface HeroProps {
         labels: string[];
         summary: string;
         overview: string;
-        image1?: string;
-        image2?: string;
+        image1: string;
+        image2: string;
     };
 }
 
@@ -20,19 +21,23 @@ export default function Hero({ data }: HeroProps) {
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.6 }}
         >
             <h1>{data.title}</h1>
+
             <div className={styles.labels}>
-                {data.labels.map((label, i) => (
-                    <span key={i} className={styles.tag}>{label}</span>
+                {data.labels.map((l, i) => (
+                    <span key={i} className={styles.tag}>{l}</span>
                 ))}
             </div>
+
             <p className={styles.lead}>{data.summary}</p>
-            <div className={styles.heroImage}>
-                {data.image1 && <motion.img src={data.image1} alt="Hero 1" whileHover={{ scale: 1.02 }} />}
-                {data.image2 && <motion.img src={data.image2} alt="Hero 2" whileHover={{ scale: 1.02 }} />}
+
+            <div className={styles.heroGrid}>
+                <img src={data.image1} alt="TNN spotlight" />
+                <img src={data.image2} alt="TNN mobile feed" />
             </div>
+
             <p className={styles.overview}>{data.overview}</p>
         </motion.section>
     );

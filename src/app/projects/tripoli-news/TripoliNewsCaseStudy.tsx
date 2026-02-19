@@ -3,6 +3,7 @@
 import Hero from "./sections/Hero";
 import Role from "./sections/Role";
 import Process from "./sections/Process";
+import DesignSystem from "./sections/DesignSystem";
 import Strategy from "./sections/Strategy";
 import EditorialSystem from "./sections/EditorialSystem";
 import Results from "./sections/Results";
@@ -13,35 +14,49 @@ export default function TripoliNewsCaseStudy() {
         <main className={styles.page}>
             <Hero
                 data={{
-                    title: "Tripoli News Network (TNN)",
+                    title: "TNN: The Voices Behind the Stories",
                     labels: [
                         "Editorial Design",
-                        "Journalistic Branding",
-                        "Social Media Strategy",
-                        "Information Hierarchy"
+                        "Journalist Branding",
+                        "Social Media Identity",
+                        "Visual Hierarchy"
                     ],
                     summary:
-                        "Bridging the gap between traditional journalism and digital-first consumption through bespoke editorial branding.",
+                        "Humanizing news through a sleek, dark-mode editorial system that spotlights the journalists driving the narrative.",
                     overview:
-                        "Working with Tripoli's primary news outlet, I transformed daily headlines into high-impact social media assets. My goal was to move away from generic news templates and create a system where the subject of the article and the voice of the journalist work in visual harmony.",
-                    image1: "/images/tnn/hero-editorial-spread.png",
-                    image2: "/images/tnn/hero-social-presence.png",
+                        "For Tripoli News Network (TNN), I developed a social media identity that moves beyond generic headlines. By creating a 'Profile-First' poster system, we elevated the individual journalists, fostering a deeper sense of trust and personal connection with the Tripoli community.",
+                    image1: "/images/tnn/hero-spotlight.png", // Image showing the journalist "cards"
+                    image2: "/images/tnn/hero-mobile-feed.png",
                 }}
             />
 
             <Role
                 data={{
-                    title: "Editorial Art Director",
-                    summary: "In a fast-paced news environment, I served as the bridge between raw reporting and visual storytelling. I was responsible for ensuring that every piece of news—whether political, social, or cultural—carried the weight and authority of the TNN brand.",
+                    title: "Visual Strategist & Editorial Designer",
+                    summary: "My role was to design a system that felt both 'Premium' and 'Urgent.' I moved TNN away from cluttered layouts into a structured, card-based design that gives equal weight to the news headline and the professional identity of the writer.",
                     responsibilities: [
-                        "Bespoke Article Poster Design: Creating unique visual hooks for high-priority editorial pieces.",
-                        "Journalist Spotlights: Designing layouts that highlight the writer, building authority and trust for each story.",
-                        "Brand Stewardship: Maintaining strict adherence to TNN's visual identity while modernizing its digital presence.",
-                        "Rapid Response Workflow: Delivering high-quality design assets at the speed of a 24-hour news cycle.",
-                        "Visual Hierarchy Management: Organizing headlines, sub-headers, and credits for instant legibility on mobile devices."
+                        "Journalist Profile Branding: Designing a consistent 'Portrait' style for TNN’s leading voices.",
+                        "Dark-Mode Editorial System: Implementing a high-contrast black/white/red palette for maximum readability on mobile.",
+                        "Dynamic Typography: Balancing bold Arabic headlines with clean, structured metadata.",
+                        "Template Scalability: Creating a modular layout that works for short quotes, breaking news, or deep-dive articles.",
+                        "Platform-Specific Optimization: Ensuring the posters maintain a 'Premium' feel across Facebook and Instagram feeds."
                     ],
-                    image1: "/images/tnn/behind-the-design.png",
-                    image2: "/images/tnn/journalist-highlight-template.png",
+                    image1: "/images/tnn/layout-structure.png", // Image showing the grid or typography
+                    image2: "/images/tnn/color-palette.png",
+                }}
+            />
+
+            <DesignSystem
+                data={{
+                    title: "The 'Journalist Card' Identity",
+                    description: "The core of this project was the creation of the 'Journalist Card.' By using a dark, atmospheric background and framing the journalist with sharp, geometric accents, the design communicates authority. This isn't just news; it's a professional editorial perspective.",
+                    focusPoints: [
+                        "Signature Red Accents: Using the TNN brand color to highlight key information and create visual flow.",
+                        "Portrait Integration: Treating journalist photos with a consistent lighting and color-grading style for brand harmony.",
+                        "Informational Balance: Organizing the headline, the journalist's name, and the TNN logo into a fixed, 'Trusted' hierarchy."
+                    ],
+                    image1: "/images/tnn/before-after-logic.png",
+                    image2: "/images/tnn/journalist-gallery.png", // A grid of different journalists
                 }}
             />
 
@@ -61,15 +76,15 @@ export default function TripoliNewsCaseStudy() {
 
             <Strategy
                 data={{
-                    title: "Strategy: Clarity Over Clutter",
-                    description: "In the noisy environment of a social media feed, news needs to 'stop the scroll.' My strategy focused on high-contrast layouts and a 'No-Fluff' design approach. By prioritizing the headline and a single, powerful image, we ensured the core message was delivered in under 2 seconds.",
+                    title: "Strategy: Authority Through Design",
+                    description: "In an era of misinformation, professional design acts as a 'Trust Signal.' My strategy was to use bold, newspaper-inspired typography and high-end portraits to signal to the audience that TNN is a verified, high-quality source of truth in Tripoli.",
                     points: [
-                        "Stop-the-Scroll Typography: Scaling headlines for maximum impact on small screens.",
-                        "Brand Consistency: Ensuring that regardless of the subject, the TNN identity remains the dominant visual force.",
-                        "Platform Optimization: Designing specific aspect ratios for Facebook (where TNN has a massive following) and Instagram Stories."
+                        "Personalized News: Shifting the focus from 'Faceless News' to 'Expert Opinion'.",
+                        "Visual Consistency: Ensuring that every post, regardless of the topic, is instantly recognizable as TNN content.",
+                        "Mobile-First Legibility: Optimizing font weights and contrast ratios for readers scrolling quickly through social feeds."
                     ],
-                    image1: "/images/tnn/analytics-impact.png",
-                    image2: "/images/tnn/mobile-feed-preview.png",
+                    image1: "/images/tnn/feed-mockup.png",
+                    image2: "/images/tnn/engagement-results.png",
                 }}
             />
 
@@ -77,21 +92,21 @@ export default function TripoliNewsCaseStudy() {
                 data={[
                     {
                         step: "01",
-                        title: "Content Synthesis",
-                        description: "Distilling long-form articles into a single, powerful visual hook and a compelling headline.",
-                        image: "/images/tnn/process-synthesis.png",
+                        title: "Visual Audit",
+                        description: "Analyzing the news landscape to create a dark-mode aesthetic that stands out against the typical light-colored news feeds.",
+                        image: "/images/tnn/process-01.png",
                     },
                     {
                         step: "02",
-                        title: "Bespoke Illustration/Curation",
-                        description: "Selecting or editing imagery that reflects the gravity or the mood of the specific news subject.",
-                        image: "/images/tnn/process-curation.png",
+                        title: "The Grid Logic",
+                        description: "Defining the 'Card' geometry—allocating space for the portrait, the quote, and the brand identifiers.",
+                        image: "/images/tnn/process-02.png",
                     },
                     {
                         step: "03",
-                        title: "Editorial Polish",
-                        description: "Applying the final TNN branding layers and journalist credits for a verified, news-ready finish.",
-                        image: "/images/tnn/process-final.png",
+                        title: "Bilingual Polish",
+                        description: "Refining the Arabic typography to ensure headlines have 'weight' and authority while remaining clean.",
+                        image: "/images/tnn/process-03.png",
                     },
                 ]}
             />

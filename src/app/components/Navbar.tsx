@@ -9,7 +9,7 @@ export default function Navbar() {
       <div className="desktop-navbar">
         <a href="#about">About</a>
         <a href="#portfolio">Portfolio</a>
-        <a href="#contact" className="nav-contact">Hire ME</a>
+        <a href="/contact" className="nav-contact">Hire ME</a>
       </div>
 
       {/* Mobile / tablet menu */}
