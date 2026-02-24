@@ -2,6 +2,7 @@
 
 import React, { JSX, useEffect, useState } from "react";
 import styles from "./contact.module.css";
+import { useRouter } from "next/navigation";
 
 /* ================= TYPES ================= */
 
@@ -16,9 +17,9 @@ interface FormData {
     email: string;
     selectedServices: Service[];
     projectDescription: string;
-    timeline: string;
+    timeline: string; // ISO date
+    files: File[];
 }
-
 interface TimeState {
     hours: string;
     minutes: string;
@@ -29,6 +30,7 @@ interface ValidationErrors {
     name?: string;
     email?: string;
     projectDescription?: string;
+    timeline?: string;
 }
 
 type StatusState = "idle" | "submitting" | "success" | "error";
@@ -36,6 +38,7 @@ type StatusState = "idle" | "submitting" | "success" | "error";
 /* ================= COMPONENT ================= */
 
 export default function ProjectInquiry() {
+    const router = useRouter();
     /* ===== Services ===== */
     const servicesList: Service[] = [
         "Branding",
@@ -51,8 +54,8 @@ export default function ProjectInquiry() {
         selectedServices: [],
         projectDescription: "",
         timeline: "",
+        files: [],
     });
-
     /* ===== Clock State ===== */
     const [time, setTime] = useState<TimeState>({
         hours: "",
@@ -67,7 +70,16 @@ export default function ProjectInquiry() {
 
     /* ===== Submission State ===== */
     const [status, setStatus] = useState<StatusState>("idle");
+    const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (!e.target.files) return;
 
+        const filesArray = Array.from(e.target.files);
+
+        setFormData((prev) => ({
+            ...prev,
+            files: [...prev.files, ...filesArray],
+        }));
+    };
     /* ================= REAL-TIME CLOCK ================= */
 
     useEffect(() => {
@@ -141,26 +153,35 @@ export default function ProjectInquiry() {
             errors.projectDescription = "Project description is required.";
         }
 
+        // Timeline validation
+        if (!formData.timeline) {
+            errors.timeline = "Project timeline is required.";
+        } else {
+            const selectedDate = new Date(formData.timeline);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            if (isNaN(selectedDate.getTime())) {
+                errors.timeline = "Invalid date format.";
+            } else if (selectedDate < today) {
+                errors.timeline = "Project date must be in the future.";
+            }
+        }
+
         return errors;
     };
 
     /* ================= SUBMISSION ================= */
 
-    const handleSubmit = async (
-        e: React.FormEvent<HTMLFormElement>
-    ): Promise<void> => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         const errors = validate();
         setValidationErrors(errors);
-
         if (Object.keys(errors).length > 0) return;
 
         try {
             setStatus("submitting");
-
-            // Simulated API call
-            await new Promise<void>((resolve) => setTimeout(resolve, 2000));
 
             const payload = {
                 ...formData,
@@ -170,14 +191,16 @@ export default function ProjectInquiry() {
                 },
             };
 
-            console.log(
-                "Project Inquiry Submission:",
-                JSON.stringify(payload, null, 2)
-            );
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            });
+            if (!res.ok) throw new Error("Failed to send");
 
             setStatus("success");
-        } catch (error) {
-            console.error("Submission failed:", error);
+        } catch (err) {
+            console.error(err);
             setStatus("error");
         }
     };
@@ -201,7 +224,14 @@ export default function ProjectInquiry() {
         <section className={styles.section}>
             <div className={styles.container}>
                 <div className={styles.card}>
-
+                    <button
+                        type="button"
+                        onClick={() => router.back()}
+                        className={styles.backButton}
+                        aria-label="Go back"
+                    >
+                        ← Back
+                    </button>
                     <header className={styles.header}>
                         <h1 className={styles.title}>Project Inquiry</h1>
                         <p className={styles.clock}>
@@ -222,6 +252,7 @@ export default function ProjectInquiry() {
                                 onChange={handleChange}
                                 aria-invalid={!!validationErrors.name}
                                 aria-describedby={validationErrors.name ? "name-error" : undefined}
+                                required
                             />
                             {validationErrors.name && (
                                 <span id="name-error" role="alert">
@@ -241,7 +272,9 @@ export default function ProjectInquiry() {
                                 value={formData.email}
                                 onChange={handleChange}
                                 aria-invalid={!!validationErrors.email}
-                                aria-describedby={validationErrors.email ? "email-error" : undefined}
+                                aria-describedby={validationErrors.email ? "email-error" : undefined
+                                }
+                                required
                             />
                             {validationErrors.email && (
                                 <span id="email-error" role="alert">
@@ -287,6 +320,7 @@ export default function ProjectInquiry() {
                                         ? "description-error"
                                         : undefined
                                 }
+                                required
                             />
                             {validationErrors.projectDescription && (
                                 <span id="description-error" role="alert">
@@ -297,20 +331,59 @@ export default function ProjectInquiry() {
 
                         {/* Timeline */}
                         <div>
-                            <label htmlFor="timeline" className={styles.label}>Project Timeline</label>
+                            <label htmlFor="timeline" className={styles.label}>
+                                Project Timeline
+                            </label>
+
                             <input
                                 className={styles.input}
                                 id="timeline"
                                 name="timeline"
-                                type="text"
+                                type="date"
                                 value={formData.timeline}
                                 onChange={handleChange}
+                                min={new Date().toISOString().split("T")[0]} // prevent past dates
+                                aria-invalid={!!validationErrors.timeline}
+                                aria-describedby={validationErrors.timeline ? "timeline-error" : undefined}
+                                required
                             />
-                        </div>
 
+                            {validationErrors.timeline && (
+                                <span id="timeline-error" role="alert">
+                                    {validationErrors.timeline}
+                                </span>
+                            )}
+                        </div>
+                        {/* Attachments */}
+                        <div className={styles.field}>
+                            <label htmlFor="files" className={styles.label}>
+                                Attach Files (PDF or Images)
+                            </label>
+
+                            <input
+                                id="files"
+                                type="file"
+                                multiple
+                                accept="application/pdf,image/*"
+                                onChange={handleFileUpload}
+                                className={styles.fileInput}
+                            />
+
+                            {formData.files.length > 0 && (
+                                <ul className={styles.fileList}>
+                                    {formData.files.map((file, i) => (
+                                        <li key={i}>{file.name}</li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
                         {/* Submit */}
-                        <div>
-                            <button type="submit" disabled={status === "submitting"} className={styles.submit}>
+                        <div className={styles.submitWrap}>
+                            <button
+                                type="submit"
+                                disabled={status === "submitting"}
+                                className={styles.submitSolid}
+                            >
                                 {status === "submitting" ? "Sending..." : "Send Inquiry"}
                             </button>
 

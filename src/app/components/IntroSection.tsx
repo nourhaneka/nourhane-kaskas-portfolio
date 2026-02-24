@@ -61,7 +61,7 @@ export default function IntroSection() {
 
           {/* CTA */}
           <motion.a
-            href="#portfolio"
+            href="/contact"
             className="intro-button"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
