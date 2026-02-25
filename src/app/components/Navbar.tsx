@@ -7,8 +7,8 @@ export default function Navbar() {
     <nav className="navbar">
       {/* Desktop links */}
       <div className="desktop-navbar">
-        <a href="#about">About</a>
-        <a href="#portfolio">Portfolio</a>
+        <a href="/about">About</a>
+        <a href="/portfolio">Portfolio</a>
         <a href="/contact" className="nav-contact">Hire ME</a>
       </div>
 
