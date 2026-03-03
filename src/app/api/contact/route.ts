@@ -1,6 +1,11 @@
 import { Resend } from "resend";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(req: Request) {
+    if (!process.env.RESEND_API_KEY) {
+        return new Response(JSON.stringify({ error: "Server misconfiguration: missing API key" }), { status: 500 });
+    }
     const resend = new Resend(process.env.RESEND_API_KEY);
     try {
         const body = await req.json();
