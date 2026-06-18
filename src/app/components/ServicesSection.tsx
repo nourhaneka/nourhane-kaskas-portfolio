@@ -1,5 +1,4 @@
 "use client";
-
 import "./ServicesSection.css";
 
 export default function WhatIDo() {
@@ -41,12 +40,12 @@ export default function WhatIDo() {
     return (
         <section className="what-i-do">
             <div className="what-i-do__inner">
+
                 {/* LEFT — text */}
                 <div className="what-i-do__text">
-                    <span className="label">WHAT I DO</span>
+                    <h2><span className="label">WHAT I DO</span></h2>
                     <p className="description">
-                        I help brands and products communicate clearly through thoughtful
-                        design and consistent visual systems.
+                        I help brands and products communicate clearly through thoughtful design and consistent visual systems.
                     </p>
                 </div>
 
@@ -59,6 +58,8 @@ export default function WhatIDo() {
                             style={{
                                 background: card.color,
                                 transform: `rotate(${card.rotate})`,
+                                top: card.top,
+                                zIndex: card.z,
                             }}
                         >
                             <h3>{card.title}</h3>
@@ -66,6 +67,7 @@ export default function WhatIDo() {
                         </div>
                     ))}
                 </div>
+
             </div>
         </section>
     );
